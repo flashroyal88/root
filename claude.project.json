@@ -1,0 +1,89 @@
+{
+  "projectDescription": "JDN DP LogBook Web Interface - Maritime DP operations management system with a Next.js frontend and Node.js backend. Tracks Dynamic Positioning logs, vessel data, crew shifts, and certifications using custom validations and real-time integrations.",
+  "architecture": {
+    "frontend": "Next.js 14+ App Router, TypeScript, Tailwind CSS, Zod validation",
+    "backend": "Node.js, TypeScript, Prisma ORM (MySQL)"
+  },
+  "folderStructure": {
+    "frontend": "/src/features, /src/components, /src/lib, /src/hooks, /src/types, /src/mock, /src/utils, /src/middleware",
+    "backend": "/src/controllers, /src/routes, /src/services, /src/prisma, /src/types, /src/utils, /src/middlewares, /src/config"
+  },
+  "rules": [
+    {
+      "rule": "Always provide complete, production-ready code blocks — no placeholders or partial snippets.",
+      "priority": "critical"
+    },
+    {
+      "rule": "Always include the exact file path and insertion location (e.g., 'Add to src/features/profile/hooks/useProfile.ts at line 25').",
+      "priority": "critical"
+    },
+    {
+      "rule": "Follow existing patterns used in the codebase — avoid reinventing structure unless justified.",
+      "priority": "high"
+    },
+    {
+      "rule": "Use Zod + React Hook Form for all form validation. Types should use z.infer<typeof SchemaName>.",
+      "priority": "high"
+    },
+    {
+      "rule": "Zod schemas must live in /features/[feature]/schemas/, not centralized.",
+      "priority": "high"
+    },
+    {
+      "rule": "Use Tailwind CSS and custom `tailwind.config.js` colors consistently for all styles.",
+      "priority": "medium"
+    },
+    {
+      "rule": "For DB access, use Prisma Client with strong typing (e.g., Prisma.User).",
+      "priority": "high"
+    },
+    {
+      "rule": "If changes might break existing behavior or styling, warn clearly.",
+      "priority": "high"
+    },
+    {
+      "rule": "Only suggest packages already listed in package.json — no new dependencies unless explicitly allowed.",
+      "priority": "medium"
+    },
+    {
+      "rule": "If a feature already exists, point to its location rather than re-implementing it.",
+      "priority": "medium"
+    }
+  ],
+  "codeConventions": {
+    "typescript": {
+      "preferInferredTypes": true,
+      "useZodSchemas": true,
+      "strictMode": true
+    },
+    "react": {
+      "useAppRouter": true,
+      "preferServerComponents": true,
+      "useTypeScriptInterfaces": true
+    },
+    "database": {
+      "usePrismaClient": true,
+      "preferTypedQueries": true
+    }
+  },
+  "commonPatterns": {
+    "formValidation": "Zod + React Hook Form in /features/[feature]/schemas/",
+    "apiCalls": "Custom hooks in /features/[feature]/hooks/ using typed fetch",
+    "components": "Reusable UI in /components/, scoped UI in /features/[feature]/components/",
+    "styling": "Tailwind CSS with theme extensions, uses shadcn/ui"
+  },
+  "avoid": [
+    "Centralized Zod schemas",
+    "Manual TS interfaces when Zod exists",
+    "Incomplete code or placeholder comments",
+    "Generic or incorrect file paths",
+    "Adding new packages without checking dependencies"
+  ],
+  "reminders": [
+    "Prefer existing patterns before introducing new ones",
+    "Validate that Tailwind custom colors are used properly",
+    "Ensure all Prisma types match the schema",
+    "Form fields must handle error and validation states",
+    "Always type API handlers and service responses"
+  ]
+}

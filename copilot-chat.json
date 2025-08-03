@@ -1,0 +1,91 @@
+{
+  "context": {
+    "projectDescription": "JDN DP LogBook Web Interface - Maritime DP operations management system with Next.js frontend and Node.js backend.",
+    "architecture": {
+      "frontend": "dp-web (Next.js 14+ App Router, TypeScript, Tailwind CSS, Zod validation)",
+      "backend": "dp-backend (Node.js, TypeScript, Prisma ORM with MySQL)"
+    },
+    "structure": {
+      "frontend": "/src/features, /src/components, /src/lib, /src/hooks, /src/types, /src/mock, /src/utils, /src/middleware",
+      "backend": "/src/controllers, /src/routes, /src/services, /src/prisma, /src/types, /src/utils, /src/middlewares, /src/config"
+    }
+  },
+  "instructions": [
+    {
+      "rule": "Always provide production-ready, complete code blocks - never partial snippets or placeholder comments.",
+      "priority": "critical"
+    },
+    {
+      "rule": "Always specify exact file paths and placement instructions (e.g., 'Add to src/features/profile/hooks/useProfile.ts at line 25').",
+      "priority": "critical"
+    },
+    {
+      "rule": "Use existing project patterns and conventions - check similar files first before suggesting new approaches.",
+      "priority": "high"
+    },
+    {
+      "rule": "For TypeScript types, always use z.infer<typeof SchemaName> instead of manually defining interfaces when Zod schemas exist.",
+      "priority": "high"
+    },
+    {
+      "rule": "Place Zod schemas in feature-specific directories: /features/[feature]/schemas/ not in centralized locations.",
+      "priority": "high"
+    },
+    {
+      "rule": "Use Tailwind CSS for all styling - reference the custom tailwind.config.js colors and spacing.",
+      "priority": "medium"
+    },
+    {
+      "rule": "For database operations, use Prisma client with proper typing: Prisma.ModelName for types.",
+      "priority": "high"
+    },
+    {
+      "rule": "If suggesting something that might override existing styles or break current setup, provide clear warnings.",
+      "priority": "high"
+    },
+    {
+      "rule": "Don't suggest libraries not already in package.json - work with the existing tech stack.",
+      "priority": "medium"
+    },
+    {
+      "rule": "If I'm asking about something already implemented, remind me of the existing solution and its location.",
+      "priority": "medium"
+    }
+  ],
+  "codeStyle": {
+    "typescript": {
+      "preferInferredTypes": true,
+      "useZodSchemas": true,
+      "strictMode": true
+    },
+    "react": {
+      "useAppRouter": true,
+      "preferServerComponents": true,
+      "useTypeScriptInterfaces": true
+    },
+    "database": {
+      "usePrismaClient": true,
+      "preferTypedQueries": true
+    }
+  },
+  "commonPatterns": {
+    "formValidation": "React Hook Form + Zod schemas in /features/[feature]/schemas/",
+    "apiCalls": "Custom hooks in /features/[feature]/hooks/ using fetch with proper error handling",
+    "components": "Reusable UI in /components/, feature-specific in /features/[feature]/components/",
+    "styling": "Tailwind CSS with custom config, shadcn/ui components"
+  },
+  "avoidPatterns": [
+    "Creating centralized schema files - keep them feature-specific",
+    "Manual TypeScript interfaces when Zod schemas exist",
+    "Suggesting new dependencies without checking existing ones",
+    "Incomplete code blocks or TODO comments in production code",
+    "Generic file paths - always be specific about placement"
+  ],
+  "reminders": [
+    "Check if the pattern already exists in the codebase before creating new implementations",
+    "Verify Tailwind custom colors are being used correctly (check tailwind.config.js)",
+    "Ensure Prisma types match the current schema",
+    "Form components should support error props and validation states",
+    "All API endpoints should have proper TypeScript typing"
+  ]
+}
